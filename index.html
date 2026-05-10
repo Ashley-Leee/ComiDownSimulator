@@ -111,11 +111,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 [[ END&gt;快乐同人 -&gt;广告位]]
 
 </tw-passagedata><tw-passagedata pid="4" name="广告位" tags="" position="975,25" size="200,200">感谢游玩！相信世界上一定有很多在组建街道的过程中纯粹获得快乐、加深对自推或自己CP的爱意/加深同担情谊的经历，这样的网友点进此小游戏多半会大翻白眼！
-
 这个小游戏很多地方基于作者本人和作者数位朋友的真实经历改编，我们中有单推有cp粉，共同点是以比较严格的标准看都不算毫无问题，而且下场都不是很好。
-
 如果这个游戏里有令你感到天呐怎至于此/呵呵作者一定隐瞒了自己的问题在卖惨的地方，那我们也没有任何办法！你是比我们运气更好的人
-
 
 [[ 再来一局-&gt;未命名片段]]
 
@@ -458,7 +455,7 @@ ComiDown申摊马上就要开始了，你没有时间了
 
 [[问个清楚-&gt;神仙打架]]
 
-[[假装无事发生|筹备1]]</tw-passagedata><tw-passagedata pid="33" name="我不会啊" tags="" position="300,700" size="100,100">几个新人摊主找到了你，表示自己完全不知道怎么做制品怎么印本印周边，你和她们聊了几句，发现她们对同人制品和刊物的了解比你的预期还要少，只有对“想要街道”这件事的热情，产出也不算很多，至今发表的作品甚至不够整理成册，这样下去没法通过ComiDown主办的审核
+[[假装无事发生|筹备1]]</tw-passagedata><tw-passagedata pid="33" name="我不会啊" tags="" position="300,725" size="100,100">几个新人摊主找到了你，表示自己完全不知道怎么做制品怎么印本印周边，你和她们聊了几句，发现她们对同人制品和刊物的了解比你的预期还要少，只有对“想要街道”这件事的热情，产出也不算很多，至今发表的作品甚至不够整理成册，这样下去没法通过ComiDown主办的审核
 你决定
 [[反正官方法不责众，教她们上传空气本|空气本]]
 [[作弊一下，把你没公开过的本挂到新人名下|继续准备]]
@@ -484,6 +481,7 @@ ComiDown申摊马上就要开始了，你没有时间了
  </tw-passagedata><tw-passagedata pid="35" name="一轮成了" tags="" position="475,850" size="100,100">你数了一下，这一轮你们街道的过摊数已经超过了十个，太强了吧！
 但现在还不可以休息！接下来你需要印刷街道的无料、提供ComiDown要求的各种展板摊位号素材，提交ComiDown大屏和宣传用的相关文件，还要对应摊主们私下找到你时告知的想和某人连摊或者想离某人远点的要求。
 你又开始焦虑了。
+&lt;&lt;set $Fullstat = true&gt;&gt;
 &lt;&lt;set $rollB = random(1,100)&gt;&gt;&lt;div style=&quot;color:yellow;&quot;&gt;
 看看你随机生成的的运气：
 &lt;&lt;print $rollB&gt;&gt;&lt;br&gt;&lt;/div&gt;&lt;&lt;if $rollB &lt;= 40&gt;&gt;    &lt;&lt;if $stat is &quot;强&quot; and !$EventFightStrong&gt;&gt;&lt;&lt;set $EventFightStrong = true&gt;&gt;
@@ -591,20 +589,22 @@ ComiDown申摊马上就要开始了，你没有时间了
 &lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="筹备2" tags="" position="175,1100" size="100,100">又在一个凌晨四点，ComiDown主办在群里发布了近日会公布第二批摊位审核结果的消息，同日凌晨四点十五分，ComiDown将“近日将公开第二批摊位审核结果”的消息挂到了官方网站上。
 五天后，第二批摊位审核结果公开了。
 你们街道结果如何？
-
-&lt;&lt;button &quot;运气大于努力但之前的努力也有用&quot;&gt;&gt;
-
-    &lt;&lt;set $roll = random(1,100)&gt;&gt;
-
-    &lt;&lt;if $roll &lt;= 80&gt;&gt;
-        &lt;&lt;goto &quot;二轮成了&quot;&gt;&gt;
-
-    &lt;&lt;else&gt;&gt;
-        &lt;&lt;goto &quot;等抽选&quot;&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
-   
- &lt;&lt;/button&gt;&gt;
- </tw-passagedata><tw-passagedata pid="49" name="继续准备pre" tags="" position="25,450" size="100,100">Comidown官方保持了一贯的反应迟钝，你们担忧了两三周，但无事发生。你松了一口气，觉得再也不敢了。
+&lt;&lt;if !$Fullstat&gt;&gt;
+    &lt;&lt;button &quot;运气大于努力但之前的努力也有用&quot;&gt;&gt;
+        &lt;&lt;set $roll = random(1,100)&gt;&gt;
+        &lt;&lt;if $roll &lt;= 80&gt;&gt;
+            &lt;&lt;goto &quot;二轮成了&quot;&gt;&gt;
+        &lt;&lt;else&gt;&gt;
+            &lt;&lt;goto &quot;等抽选&quot;&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/button&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    &lt;div style=&quot;color:#ff6b6b; font-weight:bold;&quot;&gt;
+        &lt;&lt;button &quot;哈哈我们早成了&quot;&gt;&gt;
+            &lt;&lt;goto &quot;二轮成了&quot;&gt;&gt;
+        &lt;&lt;/button&gt;&gt;
+    &lt;/div&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="继续准备pre" tags="" position="25,450" size="100,100">Comidown官方保持了一贯的反应迟钝，你们担忧了两三周，但无事发生。你松了一口气，觉得再也不敢了。
 你们顺利地进行了前期准备，陆续补充了各种打样和样机上传到ComiDown的官方网站cdd，你为一些新人摊主提供了帮助，举手之劳。
 申摊结束后的一个多月里，ComiDown没发布任何消息。突然在一天凌晨三点，ComiDown主办在一个500人摊主群里宣布如果顺利明天白天会公布第一批摊位审核的结果。聊天记录在三十分钟内自500人摊主群传播扩散到了几百个不同的街道群/同好群/主催群/印厂群，在凌晨四点时，几乎所有还没睡且关注ComiDown的人都得知了消息并因此失眠了。
 上午十一点，ComiDown将“近日将公开第一批摊位审核结果”的消息挂到了官方网站上。
@@ -759,10 +759,10 @@ ComiDown宣传期到了，在各个喜欢比美的平台上很快有人总结了
 
 [[问个清楚-&gt;神仙打架4]]
 
-[[假装无事发生|静候开展0]]</tw-passagedata><tw-passagedata pid="66" name="随机事件_A4" tags="" position="525,1450" size="100,100">&lt;div style=&quot;color:#f3d9fa;&quot;&gt;
+[[假装无事发生|静候开展0]]</tw-passagedata><tw-passagedata pid="66" name="随机事件_A4" tags="" position="525,1475" size="100,100">&lt;div style=&quot;color:#f3d9fa;&quot;&gt;
 私聊你的人叫小A，是你最近比较眼熟的活跃产出之一，已经过摊了。小A表示自己很有空，愿意帮助你。
 你接受了她的帮助，将她设置成管理员。
-小A自告奋勇帮你联系了她熟悉的印厂，帮你滑铲了一些你决定没希望的东西，你感动得要哭了。
+小A自告奋勇帮你联系了她熟悉的印厂，帮你滑铲了一些你觉得没希望的东西，你感动得要哭了。
 &lt;/div&gt;
  [[继续|开展1]]
  </tw-passagedata><tw-passagedata pid="67" name="滑铲成了" tags="" position="225,1350" size="100,100">笔尖起火键盘起火！你终于把自己的新刊搞完了，下一个问题是此时离开展还剩三天

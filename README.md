@@ -1,3 +1,4 @@
+https://ashley-leee.github.io/ComiDownSimulator/
 ComiDown（会点进这个链接的应该都知道原型是什么）冷圈街委模拟器
 竟然真的点进来了那看一眼我的邪门CP（呃
 ![封面](loop-1.png)
